@@ -143,7 +143,7 @@ contract UFragments is ERC20Detailed, Ownable {
     }
 
     function initialize(address owner_) public override initializer {
-        ERC20Detailed.initialize("Ampleforth", "AMPL", uint8(DECIMALS));
+        ERC20Detailed.initialize("Ampleforth Fork", "AMPLFORK", uint8(DECIMALS));
         Ownable.initialize(owner_);
 
         rebasePausedDeprecated = false;

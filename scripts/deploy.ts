@@ -1,6 +1,5 @@
 import { BigNumber, utils, constants } from 'ethers'
 import { task } from 'hardhat/config'
-import { Interface } from '@ethersproject/abi'
 import { getImplementationAddress } from '@openzeppelin/upgrades-core'
 
 import {
@@ -69,6 +68,7 @@ task('deploy:amplforce:testnet', 'Deploy ampleforth contract suite for testnet')
       RATE_REPORT_EXPIRATION_SEC,
       RATE_REPORT_DELAY_SEC,
       RATE_MIN_PROVIDERS,
+      1 // TODO - NEEDS ELABORATION
     )
     console.log('Market oracle to:', marketOracle.address)
 
@@ -78,6 +78,7 @@ task('deploy:amplforce:testnet', 'Deploy ampleforth contract suite for testnet')
       CPI_REPORT_EXPIRATION_SEC,
       CPI_REPORT_DELAY_SEC,
       CPI_MIN_PROVIDERS,
+      1 // TODO - NEEDS ELABORATION
     )
     console.log('CPI oracle to:', cpiOracle.address)
 
@@ -86,8 +87,8 @@ task('deploy:amplforce:testnet', 'Deploy ampleforth contract suite for testnet')
       hre,
       'UFragmentsPolicy',
       deployer,
-      'initialize(address,address,uint256)',
-      [owner, ampl.address, INITIAL_CPI.toString()],
+      'initialize(address,address)',
+      [owner, ampl.address],
     )
     const policyImpl = await getImplementationAddress(
       hre.ethers.provider,

@@ -1,6 +1,8 @@
 # Generated files
 build
 dist
+.idea
+.DS_Store
 
 ### Emacs ##
 *~
