@@ -76,7 +76,7 @@ export async function verify(
     console.log('Verification failed:', e)
     console.log('Execute the following')
     console.log(
-      `yarn hardhat run verify:verify --address ${address}  --constructor-arguments "${JSON.stringify(
+      `ryarn hardhat run verify:verify --address ${address} --network sepolia  --constructor-arguments "${JSON.stringify(
         constructorArguments,
       ).replace(/"/g, '\\"')}"`,
     )

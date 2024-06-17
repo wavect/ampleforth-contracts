@@ -17,6 +17,7 @@ require('./scripts/deploy')
 require('./scripts/upgrade')
 
 export default {
+  defaultNetwork: 'sepolia',
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
   },
@@ -30,8 +31,8 @@ export default {
     ganache: {
       url: 'http://127.0.0.1:8545',
     },
-    goerli: {
-      url: `https://eth-goerli.g.alchemy.com/v2/${process.env.ALCHEMY_SECRET}`,
+    sepolia: {
+      url: `https://ethereum-sepolia.rpc.subquery.network/public`,
       accounts: {
         mnemonic:
           process.env.PROD_MNEMONIC || Wallet.createRandom().mnemonic.phrase,
